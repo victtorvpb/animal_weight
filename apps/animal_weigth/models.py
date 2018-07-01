@@ -11,3 +11,6 @@ class FarmModel(TimeStampedModel):
     cnpj = models.CharField(
         verbose_name=_('CNPJ'), null=False, blank=False, max_length=18, unique=True
     )
+
+    def __str__(self):
+        return 'Fazenda {} de CNPJ {}'.format(self.name, self.cnpj)
