@@ -5,6 +5,7 @@ install-requirements:
 
 install-requirements-dev:
 	pipenv install --dev
+	pip install black
 clean:
 	pipenv --rm
 pep8:
