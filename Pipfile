@@ -7,6 +7,7 @@ url = "https://pypi.python.org/simple"
 django = "*"
 djangorestframework = "*"
 tox = "*"
+django-extensions = "*"
 
 [dev-packages]
 "flake8" = "*"
