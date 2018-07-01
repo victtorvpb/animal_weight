@@ -18,12 +18,7 @@ class FarmModel(TimeStampedModel):
     )
 
     token = models.CharField(
-        verbose_name=_('CNPJ'),
-        null=False,
-        blank=False,
-        max_length=30,
-        unique=True,
-        default=secrets.token_hex(30),
+        verbose_name=_('token'), max_length=30, unique=True, default=secrets.token_hex(30)
     )
 
     def __str__(self):

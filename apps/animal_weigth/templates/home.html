@@ -1,0 +1,25 @@
+{% extends 'base_app.html' %}
+
+{% block title %}Home{% endblock %}
+{% block title_page %}Página inicial {% endblock %} 
+{% block content_app %}
+<div class="row">
+{% for farm in object_list %}
+<div class="col-xl-4">
+    <div class="card card-default">
+        <div class="card-header">
+            <div class="header-block">
+                <p class="title fa fa-building"> {{farm.name}} </p>
+            </div>
+        </div>
+        <div class="card-block">
+            <p> CNPJ: {{farm.cnpj}}</p>
+            <p> TOKEN: {{farm.token}} </p>
+        </div>
+    </div>
+</div>
+{% empty %}
+    <li>Não tem fazendo cadastrada</li>
+{% endfor %}
+</div>
+{% endblock %}
