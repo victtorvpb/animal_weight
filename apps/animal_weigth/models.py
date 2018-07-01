@@ -1,8 +1,12 @@
+import secrets
+
 from django_extensions.db.models import TimeStampedModel
 from django.db import models
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
-import secrets
+from dj.choices.fields import ChoiceField
+
+from .choices import AnimalChoice
 
 
 class FarmModel(TimeStampedModel):
@@ -24,3 +28,19 @@ class FarmModel(TimeStampedModel):
 
     def __str__(self):
         return 'Fazenda {} de CNPJ {}'.format(self.name, self.cnpj)
+
+
+class AnimalWeigthModel(TimeStampedModel):
+    farm = models.ForeignKey(
+        FarmModel, on_delete=models.CASCADE, related_name=_('animal_witgth_farm')
+    )
+    type_animal = ChoiceField(
+        choices=AnimalChoice, default=AnimalChoice.bovino, verbose_name=_('Tipo do Animal')
+    )
+    weigth = models.DecimalField(
+        max_digits=10, decimal_places=2, null=False, blank=False, verbose_name=_('Peso do animal')
+    )
+
+    earring_number = models.CharField(
+        max_length=15, verbose_name=_('Número do brinco'), null=False, blank=False
+    )

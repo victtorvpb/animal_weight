@@ -8,6 +8,7 @@ django = "*"
 djangorestframework = "*"
 tox = "*"
 django-extensions = "*"
+"dj.choices" = "*"
 
 [dev-packages]
 "flake8" = "*"
