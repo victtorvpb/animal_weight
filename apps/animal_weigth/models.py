@@ -2,6 +2,7 @@ from django_extensions.db.models import TimeStampedModel
 from django.db import models
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
+import secrets
 
 
 class FarmModel(TimeStampedModel):
@@ -10,6 +11,15 @@ class FarmModel(TimeStampedModel):
 
     cnpj = models.CharField(
         verbose_name=_('CNPJ'), null=False, blank=False, max_length=18, unique=True
+    )
+
+    token = models.CharField(
+        verbose_name=_('CNPJ'),
+        null=False,
+        blank=False,
+        max_length=30,
+        unique=True,
+        default=secrets.token_hex(30),
     )
 
     def __str__(self):
