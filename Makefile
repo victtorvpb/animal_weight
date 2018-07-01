@@ -10,5 +10,4 @@ install-requirements-dev:
 clean:
 	pipenv --rm
 pep8:
-	black . -S -v --py36 --exclude .venv &
-	flake8 . 
+	black . -S -v --py36 --exclude .venv -l 99 & 	flake8 . 
