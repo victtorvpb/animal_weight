@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{% block title %}{{title}}{% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        {% block style_default %}
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/app.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/vendor.css">
+        {% endblock %}
+    </head>
+<body>
+    {% block content %}
+    {% endblock %}
+
+
+    {% block js_default %}
+        <script src="{{ STATIC_URL }}js/vendor.js"></script>
+        <script src="{{ STATIC_URL }}js/app.js"></script>
+        
+    {% endblock %}
+</body>
+</html>
