@@ -6,9 +6,11 @@ url = "https://pypi.python.org/simple"
 [packages]
 django = "*"
 djangorestframework = "*"
+tox = "*"
 
 [dev-packages]
 "flake8" = "*"
+pytest-django = "*"
 
 [requires]
 python_version = "3.6"
