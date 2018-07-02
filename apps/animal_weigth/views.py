@@ -49,3 +49,11 @@ class CreateAnimalWeigth(CreateView):
             return self.form_valid(form)
 
         return self.form_invalid(form)
+
+
+@method_decorator(login_required, name='dispatch')
+class UpdateAnimalWeigth(UpdateView):
+    template_name = 'create_animals.html'
+    model = AnimalWeigthModel
+    success_url = reverse_lazy('animal_weigth:home')
+    fields = ['type_animal', 'weigth', 'earring_number']

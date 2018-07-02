@@ -32,7 +32,7 @@
                           <td>{{animals.farm.name}}</td>
                           <td>{{animals.get_type_animal_display}}</td>
                           <td>{{animals.earring_number}}</td>
-                          <td> <a href="#"> <i class="fa fa-edit"></i></a> </td>
+                          <td> <a href="{% url 'animal_weigth:edit_animal_weigth' pk=animals.pk %}"> <i class="fa fa-edit"></i></a> </td>
                         </tr>
                         {% endfor %}
                       </tbody>
