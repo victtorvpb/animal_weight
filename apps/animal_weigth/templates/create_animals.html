@@ -1,0 +1,7 @@
+{% extends 'base_app.html' %}
+{% block content_app %}
+<form method="post">{% csrf_token %}
+    
+{{ form.as_p }}
+<input class="btn btn-success btn-lg" type="submit" value="Salvar" />
+{%endblock%}
