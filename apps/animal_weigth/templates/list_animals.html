@@ -30,7 +30,7 @@
                         {% for animals in object_list %}
                         <tr >
                           <td>{{animals.farm.name}}</td>
-                          <td>{{animals.type}}</td>
+                          <td>{{animals.get_type_animal_display}}</td>
                           <td>{{animals.earring_number}}</td>
                           <td> <a href="#"> <i class="fa fa-edit"></i></a> </td>
                         </tr>
