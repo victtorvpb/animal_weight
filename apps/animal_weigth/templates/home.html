@@ -5,8 +5,10 @@
 {% block content_app %}
 <div class="row">
 {% for farm in object_list %}
+
 <div class="col-xl-4">
     <div class="card card-default">
+        <a href="{% url 'animal_weigth:list_animal_weigth' farm=farm.token %}">
         <div class="card-header">
             <div class="header-block">
                 <p class="title fa fa-building"> {{farm.name}} </p>
@@ -16,8 +18,10 @@
             <p> CNPJ: {{farm.cnpj}}</p>
             <p> TOKEN: {{farm.token}} </p>
         </div>
+    </a>
     </div>
 </div>
+
 {% empty %}
     <li>Não tem fazendo cadastrada</li>
 {% endfor %}
