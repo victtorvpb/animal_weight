@@ -17,3 +17,8 @@ class ListAnimalWeigth(ListView):
 
     def get_queryset(self):
         return AnimalWeigthModel.objects.filter(farm__token=self.kwargs['farm'])
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['farm'] = self.kwargs['farm']
+        return context
