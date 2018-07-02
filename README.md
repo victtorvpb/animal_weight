@@ -2,6 +2,9 @@
 # animal_weight
 
 
+## Explicação
+[Explicação](https://github.com/victorpb/animal_weight/blob/master/explanation.md)
+
 ## Requirements
 * Python 3.6
 * [pipenv](https://docs.pipenv.org/)
@@ -24,3 +27,5 @@
 
 ## Execute test
 * `pytest -v `
+
+
